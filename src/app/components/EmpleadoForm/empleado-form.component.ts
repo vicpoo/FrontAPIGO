@@ -1,12 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Empleado } from '../../interfaces/empleado.interface';
-import { FormsModule } from '@angular/forms'; // Importar FormsModule para ngModel
-import { CommonModule } from '@angular/common'; // Importar CommonModule para *ngIf
+import { FormsModule } from '@angular/forms'; 
+import { CommonModule } from '@angular/common'; 
 
 @Component({
   selector: 'app-empleado-form',
   standalone: true,
-  imports: [FormsModule, CommonModule], // Agregar FormsModule y CommonModule
+  imports: [FormsModule, CommonModule],
   templateUrl: './empleado-form.component.html',
   styleUrls: ['./empleado-form.component.css']
 })

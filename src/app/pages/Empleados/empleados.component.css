@@ -1,25 +1,72 @@
+/* Fondo negro para toda la vista */
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  color: white; /* Texto en blanco para contrastar con el fondo negro */
+}
+
 .container {
   padding: 20px;
   text-align: center;
+  background-color: black; /* Fondo negro para el contenedor */
+  color: white; /* Texto en blanco */
+  height: 100vh; /* Altura completa de la ventana */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* Botón Exit en la esquina superior izquierda */
 .exit-button {
   background-color: #6A0D0D;
   color: white;
-  padding: 10px 20px;
+  padding: 15px 30px; /* Botón más grande */
   border: none;
   cursor: pointer;
-  margin-bottom: 20px;
+  position: absolute; /* Posicionamiento absoluto */
+  top: 20px; /* Distancia desde la parte superior */
+  left: 20px; /* Distancia desde la izquierda */
+  font-size: 16px; /* Tamaño de fuente más grande */
 }
 
+/* Título centrado */
 .title {
   margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px; /* Tamaño de fuente más grande */
 }
 
+/* Contenedor principal para acciones y lista */
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px; /* Más espacio para el botón Exit */
+  width: 80%; /* Ancho del 80% del contenedor */
+}
+
+/* Botones de acciones a la izquierda */
 .actions {
-  margin-bottom: 20px;
+  width: 20%; /* Ancho del 20% del contenedor */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alineación a la izquierda */
+  gap: 20px; /* Espacio entre botones */
+  margin-top: 50px; /* Botones más abajo */
 }
 
 .actions button {
-  margin-right: 10px;
+  padding: 15px 30px; /* Botones más grandes */
+  background-color: #6A0D0D; /* Color del botón Exit */
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%; /* Botones ocupan todo el ancho del contenedor */
+  font-size: 16px; /* Tamaño de fuente más grande */
+}
+
+/* Lista de empleados a la derecha */
+.empleados-list {
+  width: 75%; /* Ancho del 75% del contenedor */
+  margin-top: 50px; /* Lista más abajo */
 }

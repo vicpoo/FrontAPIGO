@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   standalone: true,
   templateUrl: './equipos.component.html',
   styleUrls: ['./equipos.component.css'],
-  imports: [NgFor] // Agregar NgFor aquí
+  imports: [NgFor] 
 })
 export class EquiposComponent implements OnInit {
   equipos: Equipo[] = [];

@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-empleados',
   standalone: true,
-  imports: [EmpleadoListComponent, EmpleadoFormComponent,CommonModule], // Agregar los componentes
+  imports: [EmpleadoListComponent, EmpleadoFormComponent, CommonModule],
   templateUrl: './empleados.component.html',
   styleUrls: ['./empleados.component.css']
 })
@@ -26,8 +26,14 @@ export class EmpleadosComponent implements OnInit {
   }
 
   loadEmpleados(): void {
-    this.empleadoService.getEmpleados().subscribe(data => {
-      this.empleados = data;
+    this.empleadoService.getEmpleados().subscribe({
+      next: (data) => {
+        console.log("Empleados obtenidos:", data);
+        this.empleados = data;
+      },
+      error: (err) => {
+        console.error("Error al obtener empleados:", err);
+      }
     });
   }
 
