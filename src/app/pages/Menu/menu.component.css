@@ -1,0 +1,58 @@
+.menu-container {
+  background-color: black;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.exit-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.options {
+  display: flex;
+  gap: 40px;
+}
+
+.option {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.empleados {
+  background-color: #6A0D0D; /* Color rojo oscuro */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.equipos {
+  background-color: #B37700; /* Color amarillo mostaza */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.icon img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.option p {
+  margin-top: 10px;
+  font-size: 20px;
+  text-align: center;
+}

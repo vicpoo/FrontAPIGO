@@ -1,0 +1,25 @@
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+.exit-button {
+  background-color: #6A0D0D;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.actions {
+  margin-bottom: 20px;
+}
+
+.actions button {
+  margin-right: 10px;
+}

@@ -1,0 +1,8 @@
+body {
+    margin: 0;
+    padding: auto;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

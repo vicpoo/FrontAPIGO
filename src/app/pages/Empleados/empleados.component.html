@@ -1,0 +1,25 @@
+<div class="container">
+  <button class="exit-button" (click)="navigateToMenu()">Exit</button>
+  
+  <h1 class="title">Empleados</h1>
+
+  <div class="content">
+    <div class="actions">
+      <button (click)="openModal('add')">Agregar</button>
+      <button (click)="openModal('update')">Actualizar</button>
+      <button (click)="openModal('delete')">Eliminar</button>
+    </div>
+
+    <div class="empleados-list">
+      <app-empleado-list [empleados]="empleados"></app-empleado-list>
+    </div>
+  </div>
+
+  <app-empleado-form 
+    *ngIf="isModalVisible" 
+    [tipo]="modalType"
+    [empleado]="selectedEmpleado"
+    (save)="handleSave($event)"
+    (close)="closeModal()">
+  </app-empleado-form>
+</div>

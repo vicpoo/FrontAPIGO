@@ -1,0 +1,30 @@
+<div class="home-container">
+  <div class="content">
+    <h1>Bienvenido<br>Jefe...</h1>
+    <button (click)="openLogin()">Iniciar sesión</button>
+  </div>
+
+  <img src="assets/wallpaperironman.png" alt="Iron Man">
+
+  <!-- Modal -->
+  <div *ngIf="isLoginOpen" class="modal-overlay">
+    <div class="modal-content">
+      <h2>Iniciar Sesión</h2>
+
+      <div class="form-group">
+        <label for="usuario">Usuario</label>
+        <input id="usuario" type="text" [(ngModel)]="inputUsuario" placeholder="Ingresa tu usuario">
+      </div>
+
+      <div class="form-group">
+        <label for="contrasena">Contraseña</label>
+        <input id="contrasena" type="password" [(ngModel)]="inputContrasena" placeholder="Ingresa tu contraseña">
+      </div>
+
+      <div class="modal-buttons">
+        <button class="login-btn" (click)="login()">Login</button>
+        <button class="close-btn" (click)="closeLogin()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>

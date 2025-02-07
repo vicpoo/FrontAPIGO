@@ -1,0 +1,30 @@
+<div class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    
+    <h2 *ngIf="tipo === 'add'">Agregar Empleado</h2>
+    <h2 *ngIf="tipo === 'update'">Actualizar Empleado</h2>
+    <h2 *ngIf="tipo === 'delete'">Eliminar Empleado</h2>
+
+    <form *ngIf="tipo !== 'delete'" (ngSubmit)="onSubmit()">
+      <label>Nombre:</label>
+      <input [(ngModel)]="empleado!.nombre" name="nombre" required />
+
+      <label>Apellido:</label>
+      <input [(ngModel)]="empleado!.apellido" name="apellido" required />
+
+      <label>Área:</label>
+      <input [(ngModel)]="empleado!.area" name="area" required />
+
+      <label>Correo Electrónico:</label>
+      <input type="email" [(ngModel)]="empleado!.correoElectronico" name="correoElectronico" required />
+
+      <button type="submit">{{ tipo === 'update' ? 'Actualizar' : 'Guardar' }}</button>
+    </form>
+
+    <div *ngIf="tipo === 'delete'">
+      <p>¿Seguro que deseas eliminar al empleado con ID {{ empleado!.id }}?</p>
+      <button (click)="onSubmit()">Eliminar</button>
+    </div>
+  </div>
+</div>
