@@ -1,0 +1,18 @@
+<table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Marca</th>
+        <th>Número de Serie</th>
+        <th>Modelo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let equipo of equipos">
+        <td>{{ equipo.nombre }}</td>
+        <td>{{ equipo.marca }}</td>
+        <td>{{ equipo.numeroSerie }}</td>
+        <td>{{ equipo.modelo }}</td>
+      </tr>
+    </tbody>
+  </table>

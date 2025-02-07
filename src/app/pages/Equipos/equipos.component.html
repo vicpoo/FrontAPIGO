@@ -1,27 +1,28 @@
 <div class="container">
-    <button class="exit-button" (click)="navigateToAdd()">Agregar</button>
-    <h1>Lista de Equipos</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Marca</th>
-          <th>Número de Serie</th>
-          <th>Modelo</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let equipo of equipos">
-          <td>{{ equipo.nombre }}</td>
-          <td>{{ equipo.marca }}</td>
-          <td>{{ equipo.numeroSerie }}</td>
-          <td>{{ equipo.modelo }}</td>
-          <td>
-            <button (click)="navigateToEdit(equipo.id)">Actualizar</button>
-            <button (click)="deleteEquipo(equipo.id)">Eliminar</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <button class="exit-button" (click)="navigateToMenu()">Exit</button>
+
+  <h1 class="title">Equipos</h1>
+
+  <div class="content">
+    <!-- Botones de acciones a la izquierda -->
+    <div class="actions">
+      <button (click)="openModal('add')">Agregar</button>
+      <button (click)="openModal('update')">Actualizar</button>
+      <button (click)="openModal('delete')">Eliminar</button>
+    </div>
+
+    <!-- Lista de equipos a la derecha -->
+    <div class="equipos-list">
+      <app-equipo-list [equipos]="equipos"></app-equipo-list>
+    </div>
   </div>
+
+  <!-- Modal para agregar/actualizar/eliminar equipos -->
+  <app-equipo-form 
+    *ngIf="isModalVisible" 
+    [tipo]="modalType"
+    [equipo]="selectedEquipo"
+    (save)="handleSave($event)"
+    (close)="closeModal()">
+  </app-equipo-form>
+</div>

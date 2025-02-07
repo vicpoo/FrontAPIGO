@@ -1,27 +1,66 @@
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
 .container {
-    padding: 20px;
-  }
-  
-  .exit-button {
-    background-color: #B37700;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    margin-bottom: 20px;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  button {
-    margin-right: 5px;
-  }
+  padding: 20px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.exit-button {
+  background-color: #B97D10;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 16px;
+}
+
+.title {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+  width: 80%;
+}
+
+.actions {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.actions button {
+  padding: 15px 30px;
+  background-color: #B97D10;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.equipos-list {
+  width: 75%;
+  margin-top: 50px;
+}

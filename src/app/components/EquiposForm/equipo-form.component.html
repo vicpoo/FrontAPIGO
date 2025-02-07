@@ -1,0 +1,30 @@
+<div class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      
+      <h2 *ngIf="tipo === 'add'">Agregar Equipo</h2>
+      <h2 *ngIf="tipo === 'update'">Actualizar Equipo</h2>
+      <h2 *ngIf="tipo === 'delete'">Eliminar Equipo</h2>
+  
+      <form *ngIf="tipo !== 'delete'" (ngSubmit)="onSubmit()">
+        <label>Nombre:</label>
+        <input [(ngModel)]="equipo!.nombre" name="nombre" required />
+  
+        <label>Marca:</label>
+        <input [(ngModel)]="equipo!.marca" name="marca" required />
+  
+        <label>Número de Serie:</label>
+        <input [(ngModel)]="equipo!.numeroSerie" name="numeroSerie" required />
+  
+        <label>Modelo:</label>
+        <input [(ngModel)]="equipo!.modelo" name="modelo" required />
+  
+        <button type="submit">{{ tipo === 'update' ? 'Actualizar' : 'Guardar' }}</button>
+      </form>
+  
+      <div *ngIf="tipo === 'delete'">
+        <p>¿Seguro que deseas eliminar el equipo con ID {{ equipo!.id }}?</p>
+        <button (click)="onSubmit()">Eliminar</button>
+      </div>
+    </div>
+  </div>
