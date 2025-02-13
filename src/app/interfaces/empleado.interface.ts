@@ -3,6 +3,6 @@ export interface Empleado {
     nombre: string;
     apellido: string;
     area: string;
-    correoElectronico: string;
+    correo_electronico: string;
     deleted: boolean;
   }

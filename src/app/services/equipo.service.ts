@@ -7,7 +7,7 @@ import { Equipo } from '../interfaces/equipo.interface';
   providedIn: 'root'
 })
 export class EquipoService {
-  private apiUrl = 'http://localhost:8000/equipos'; 
+  private apiUrl = 'http://localhost:8000/equipos/'; 
 
   constructor(private http: HttpClient) { }
 
@@ -17,7 +17,7 @@ export class EquipoService {
   }
 
   getEquipoById(id: number): Observable<Equipo> {
-    return this.http.get<Equipo>(`${this.apiUrl}/${id}`);
+    return this.http.get<Equipo>(`${this.apiUrl}${id}`);
   }
 
   createEquipo(equipo: Equipo): Observable<Equipo> {
@@ -25,10 +25,10 @@ export class EquipoService {
   }
 
   updateEquipo(id: number, equipo: Equipo): Observable<Equipo> {
-    return this.http.put<Equipo>(`${this.apiUrl}/${id}`, equipo);
+    return this.http.put<Equipo>(`${this.apiUrl}${id}`, equipo);
   }
 
   deleteEquipo(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+    return this.http.delete<void>(`${this.apiUrl}${id}`);
   }
 }
